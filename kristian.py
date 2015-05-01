@@ -7,8 +7,8 @@ import wd.parallel
 import os
 
 class parallel(unittest.TestCase):
-	SAUCE_USERNAME = 'kristianmeiersl'
-	SAUCE_ACCESS_KEY = '69c9ea29-59c8-4b3a-9909-18b1b05343f6'
+	SAUCE_USERNAME = 'fqm387'
+	SAUCE_ACCESS_KEY = '3db6d2cf-b1eb-45af-b082-4ca7f28f0319'
  
 	def setUp(self):
 	# self.wd = WebDriver()
