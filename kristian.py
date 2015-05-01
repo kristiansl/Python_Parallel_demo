@@ -18,7 +18,7 @@ class parallel(unittest.TestCase):
  
 		browser = copy.copy(webdriver.DesiredCapabilities.CHROME)
 		browser['platform'] = 'Linux'
-		browser['name'] = 'Python on Sauce 1/2'
+		browser['name'] = 'Zebra on Sauce 1/2'
 		browser['tags'] = "Parallel"
 		browser['build'] = "9999"
 		
@@ -26,7 +26,7 @@ class parallel(unittest.TestCase):
  
 		browser = copy.copy(webdriver.DesiredCapabilities.CHROME)
 		browser['platform'] = 'Windows XP'
-		browser['name'] = 'Python on Sauce 2/2'
+		browser['name'] = 'Zebra on Sauce 2/2'
 		browser['tags'] = "Parallel"
 		browser['build'] = "9999"
 		
@@ -41,16 +41,20 @@ class parallel(unittest.TestCase):
 	@wd.parallel.multiply
 	def test_parallel(self):
  
-		self.driver.get("http://www.yahoo.com/")
-		self.driver.find_element_by_link_text("Finance").click()
-		self.driver.find_element_by_id("txtQuotes").click()
-		self.driver.find_element_by_id("txtQuotes").clear()
-		self.driver.find_element_by_id("txtQuotes").send_keys("aapl")
-		self.driver.find_element_by_id("btnQuotes").click()
- 
-		wait = WebDriverWait(self.driver, 30)
-		condition = EC.text_to_be_present_in_element((By.TAG_NAME, "html"), "Apple Inc. (AAPL)")
+		self.driver.get("https://ec2-54-169-136-199.ap-southeast-1.compute.amazonaws.com/dashboard/")
+		self.driver.find_element_by_id("textfield-1025-inputEl").clear()
+		self.driver.find_element_by_id("textfield-1025-inputEl").send_keys("vgr843@zebra.com")
+		self.driver.find_element_by_id("textfield-1026-inputEl").clear()
+		self.driver.find_element_by_id("textfield-1026-inputEl").send_keys("symbol")
+		self.driver.find_element_by_id("button-1030-btnInnerEl").click()
+
+		wait = WebDriverWait(self.driver, 20)
+		condition = EC.text_to_be_present_in_element((By.ID, "displayfield-1051-inputEl"), "Rameswara")
 		wait.until(condition)
+
+ 		self.driver.find_element_by_id("splitbutton-1052-btnWrap").click()
+ 		self.driver.find_element_by_id("menuitem-1054-itemEl").click()
+		self.driver.find_element_by_id("button-1006-btnInnerEl").click()
  
 		print self.driver.session_id
  
@@ -62,4 +66,4 @@ class parallel(unittest.TestCase):
 		self.driver.quit()
  
 if __name__ == '__main__':
-	unittest.main()
+ unittest.main()

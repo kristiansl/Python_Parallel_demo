@@ -3,7 +3,7 @@ This library is not supported by Sauce Labs. It merely servers as an
 example on send data to the Sauce Labs API.
 '''
  
-#import requests
+import requests
 import json
 import time
  
@@ -20,17 +20,17 @@ def timeit(f):
         (f.__name__, args, kw, te-ts)
         return result
  
-        return timed
+    return timed
         # Set the status of a test to pass or fail status can be passed or failed.
-    def reportStatus(status, session_id, user_id, access_key):
-        hdrs = {"Content-Type": "text/json"}
-        payload = {"passed" : status}
-        r = requests.put("http://" + user_id + ":" + access_key + "@saucelabs.com/rest/v1/" + user_id + "/jobs/" + session_id, headers=hdrs, data=json.dumps(payload))
+def reportStatus(status, session_id, user_id, access_key):
+    hdrs = {"Content-Type": "text/json"}
+    payload = {"passed" : status}
+    r = requests.put("http://" + user_id + ":" + access_key + "@saucelabs.com/rest/v1/" + user_id + "/jobs/" + session_id, headers=hdrs, data=json.dumps(payload))
  
-    def reportCustom(custom_data, session_id, user_id, access_key):
-        hdrs = {"Content-Type": "text/json"}
-        payload = {"custom-data" : custom_data}
-        r = requests.put("http://" + user_id + ":" + access_key + "@saucelabs.com/rest/v1/" + user_id + "/jobs/" + session_id, headers=hdrs, data=json.dumps(payload))
+def reportCustom(custom_data, session_id, user_id, access_key):
+    hdrs = {"Content-Type": "text/json"}
+    payload = {"custom-data" : custom_data}
+    r = requests.put("http://" + user_id + ":" + access_key + "@saucelabs.com/rest/v1/" + user_id + "/jobs/" + session_id, headers=hdrs, data=json.dumps(payload))
  
 # from selenium.webdriver.firefox.webdriver import WebDriver
 # from selenium.webdriver.common.action_chains import ActionChains
