@@ -7,8 +7,8 @@ import wd.parallel
 import os
 
 class parallel(unittest.TestCase):
-	SAUCE_USERNAME = 'fqm387'
-	SAUCE_ACCESS_KEY = '3db6d2cf-b1eb-45af-b082-4ca7f28f0319'
+	SAUCE_USERNAME = 'YOUR SAUCE_USERNAME'
+	SAUCE_ACCESS_KEY = 'YOUR SAUCE_ACCESS_KEY'
  
 	def setUp(self):
 	# self.wd = WebDriver()
@@ -43,9 +43,9 @@ class parallel(unittest.TestCase):
  
 		self.driver.get("https://ec2-54-169-136-199.ap-southeast-1.compute.amazonaws.com/dashboard/")
 		self.driver.find_element_by_id("textfield-1025-inputEl").clear()
-		self.driver.find_element_by_id("textfield-1025-inputEl").send_keys("vgr843@zebra.com")
+		self.driver.find_element_by_id("textfield-1025-inputEl").send_keys("ADD USERNAME HERE")
 		self.driver.find_element_by_id("textfield-1026-inputEl").clear()
-		self.driver.find_element_by_id("textfield-1026-inputEl").send_keys("symbol")
+		self.driver.find_element_by_id("textfield-1026-inputEl").send_keys("ADD PASSWORD HERE")
 		self.driver.find_element_by_id("button-1030-btnInnerEl").click()
 
 		wait = WebDriverWait(self.driver, 20)
