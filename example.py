@@ -11,8 +11,8 @@ from sauceclient import SauceClient
 
 # it's best to remove the hardcoded defaults and always get these values
 # from environment variables
-USERNAME = os.environ.get('SAUCE_USERNAME', "kristianmeiersl")
-ACCESS_KEY = os.environ.get('SAUCE_ACCESS_KEY', "69c9ea29-59c8-4b3a-9909-18b1b05343f6")
+SAUCE_USERNAME = os.environ['SAUCE_USERNAME']
+SAUCE_ACCESS_KEY = os.environ['SAUCE_ACCESS_KEY']
 sauce = SauceClient(USERNAME, ACCESS_KEY)
 
 browsers = [{"platform": "Mac OS X 10.9",
